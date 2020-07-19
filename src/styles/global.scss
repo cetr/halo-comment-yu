@@ -198,7 +198,7 @@
     textarea {
       background: url(https://cdn.jsdelivr.net/gh/coortop/cdn@master/img/comment_bg1.png) 100% 100% no-repeat;
       background-size: contain;
-      font-size: 13px;
+      font-size: 14px;
       line-height: 18px;
       width: 100%;
       min-height: 120px;
@@ -207,6 +207,7 @@
       overflow: hidden;
       overflow-wrap: break-word;
       resize: none;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     }
 
     textarea:focus {
@@ -783,6 +784,7 @@
       display: block;
       width: 100%;
       max-width: 100%;
+      margin-top: 5px;
 
       // Custom Scroll
       ::-webkit-scrollbar {
@@ -808,7 +810,7 @@
     .container-emoji {
       overflow-x: hidden;
       overflow-y: scroll;
-      //height: 350px;
+      max-height: 200px;
     }
 
     .category-title {
@@ -835,8 +837,8 @@
     .emoji {
       display: inline-block;
       text-align: center;
-      font-size: 25px;
-      padding: 5px;
+      font-size: 16px;
+      padding: 5px 10px;
       max-height: 30px;
       cursor: pointer;
     }

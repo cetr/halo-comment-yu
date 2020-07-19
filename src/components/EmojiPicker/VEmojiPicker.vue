@@ -36,7 +36,7 @@ export default {
     showCategory: { type: Boolean, default: false },
     emojisByRow: { type: Number, default: 10 },
     showSearch: { type: Boolean, default: () => false },
-    continuousList: { type: Boolean, default: () => false }
+    continuousList: { type: Boolean, default: () => true }
   },
   components: {
     Categories,
@@ -57,7 +57,7 @@ export default {
       this.$emit('changeCategory', this.category)
     },
     onSelectEmoji(emoji) {
-      this.updateFrequenty(emoji)
+      // this.updateFrequenty(emoji)
       this.$emit('select', emoji)
     },
     updateFrequenty(emoji) {
