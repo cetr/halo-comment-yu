@@ -201,9 +201,9 @@ export default [
     new Emoji("🤚", "raised back of hand", "经典", "", []),
     new Emoji("🖐", "raised hand with fingers splayed", "经典", "", []),
     new Emoji("🖖", "vulcan salute", "经典", "", ["prosper", "spock"]),
-    new Emoji("👋", "waving hand", "经典", ["wave"], ["goodbye"]),
-    new Emoji("🤙", "call me hand", "经典", ["call_me_hand"], []),
-    new Emoji("✍️", "writing hand", "经典", ["writing_hand"], []),
-    new Emoji("🖕", "middle finger", "经典", ["middle_finger","fu"], []),
-    new Emoji("💪", "flexed biceps", "经典", ["muscle"], ["flex","bicep","strong","workout"])
+    new Emoji("👋", "waving hand", "经典", "", ["goodbye"]),
+    new Emoji("🤙", "call me hand", "经典", "", []),
+    new Emoji("✍️", "writing hand", "经典", "", []),
+    new Emoji("🖕", "middle finger", "经典", "", []),
+    new Emoji("💪", "flexed biceps", "经典", "", ["flex","bicep","strong","workout"])
 ];
