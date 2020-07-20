@@ -177,8 +177,7 @@
     import md5 from "md5";
     import VEmojiPicker from "./EmojiPicker/VEmojiPicker";
     import emojiData from "./EmojiPicker/data/emojis.js";
-    import {isEmpty, isObject, getUrlKey} from "../utils/util";
-    import {validEmail, queryStringify} from "../utils/util";
+    import {isEmpty, isObject, getUrlKey, renderedEmojiHtml, validEmail, queryStringify} from "../utils/util";
     import commentApi from "../api/comment";
     import axios from "axios";
     import autosize from "autosize";
@@ -236,7 +235,8 @@
         },
         computed: {
             renderedContent() {
-                return this.comment.content ? marked(this.comment.content) : "";
+                let str = this.comment.content ? marked(this.comment.content) : "";
+                return renderedEmojiHtml(str);
             },
             avatar() {
                 if (!this.comment.email || !validEmail(this.comment.email)) {
@@ -361,8 +361,11 @@
                 this.emojiDialogVisible = !this.emojiDialogVisible;
             },
             handleSelectEmoji(emoji) {
-                this.comment.content += emoji.emoji;
-                // this.handleToogleDialogEmoji();
+                if (emoji.aliases != null && emoji.aliases != "") {
+                    this.comment.content += emoji.aliases;
+                } else {
+                    this.comment.content += emoji.emoji;
+                }
             },
             handleGithubLogin() {
                 const githubOauthUrl = "http://github.com/login/oauth/authorize";

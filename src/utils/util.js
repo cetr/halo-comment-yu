@@ -94,11 +94,21 @@ export function getUrlKey(name) {
     );
 }
 
-// 特殊字符转义成HTML标签
-export function decodeHTML(html){
+export function decodeHTML(html) {
     var output, elem = document.createElement('div');
     elem.innerHTML = html;
     output = elem.innerText || elem.textContent;
     elem = null;
     return output;
+}
+
+export function renderedEmojiHtml(html) {
+    const emojiData = require('../components/EmojiPicker/data/emojis.js');
+    for (let i = 0; i < emojiData["default"].length; i++) {
+        let aliases = emojiData["default"][i]["aliases"].toString().trim();
+        if (aliases != null && aliases != "") {
+            html = html.replace(new RegExp(aliases, 'g'), emojiData["default"][i].emoji);
+        }
+    }
+    return html;
 }

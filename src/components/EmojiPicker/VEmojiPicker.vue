@@ -32,7 +32,7 @@ export default {
   name: 'VEmojiPicker',
   props: {
     pack: { type: Array, required: false },
-    labelSearch: { type: String, default: 'Pesquisar...' },
+    labelSearch: { type: String },
     showCategory: { type: Boolean, default: false },
     emojisByRow: { type: Number, default: 10 },
     showSearch: { type: Boolean, default: () => false },

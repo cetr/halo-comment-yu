@@ -1,4 +1,3 @@
-/* based on https://github.com/joaoeudes7/V-Emoji-Picker */
 export const categories = {
   activity: `
   <svg style="max-height:18px" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 303.6 303.6" fill="gray">

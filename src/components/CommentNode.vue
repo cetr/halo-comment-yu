@@ -98,6 +98,7 @@
     import {timeAgo, decodeHTML} from "@/utils/util";
     import ua from "ua-parser-js";
     import marked from "marked";
+    import {renderedEmojiHtml} from "../utils/util";
 
     export default {
         name: "CommentNode",
@@ -159,7 +160,8 @@
                         '">@' + this.comment.parentAuthor +
                         "</a>";
                 }
-                return at + marked(decodeHTML(this.comment.content));
+                let str = at + marked(decodeHTML(this.comment.content));
+                return renderedEmojiHtml(str);
             },
             createTimeAgo() {
                 return timeAgo(this.comment.createTime);

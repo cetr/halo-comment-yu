@@ -907,6 +907,13 @@
   }
 }
 
+.vemoji {
+  max-width: 25px !important;
+  vertical-align: middle;
+  margin: 0 1px;
+  display: inline-block;
+}
+
 @media (max-width: 520px) {
   .halo-comment .author-info input {
     width: 100%;
