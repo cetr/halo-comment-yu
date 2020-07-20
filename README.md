@@ -6,7 +6,7 @@
 
 1. 进入后台 -> 系统 -> 博客设置 -> 评论设置
 
-2. 将 `评论模块 JS` 修改为：`https://cdn.jsdelivr.net/gh/coortop/halo-comment@master/dist/halo-comment.min.js`
+2. 将 `评论模块 JS` 修改为：`https://cdn.jsdelivr.net/gh/coortop/halo-comment@latest/dist/halo-comment.min.js`
 
 ### 自定义配置
 
@@ -183,5 +183,5 @@ var configs = {
 #### 说明
 
 1. configs 可以不用配置。
-2. 具体主题开发文档请参考：<https://halo.run/develop/theme/ready.html>。
+2. 具体主题开发文档请参考：<https://halo.run/archives/develop-theme-ready>。
 
