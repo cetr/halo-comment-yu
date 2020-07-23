@@ -1,5 +1,4 @@
 <template>
-
   <ul class="page">
     <li
       class="page-item"

@@ -1,7 +1,5 @@
-// Register components
 import Vue from 'vue'
 
-// pro components
 import CommentEditor from './CommentEditor'
 import CommentNode from './CommentNode'
 import CommentLoading from './CommentLoading'
