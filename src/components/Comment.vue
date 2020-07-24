@@ -3,12 +3,6 @@
             :class="mergedConfigs.darkMode ? 'halo-comment dark-mode': 'halo-comment'"
             id="halo-comment"
     >
-        <comment-editor
-                :targetId="id"
-                :target="target"
-                :options="options"
-                :configs="mergedConfigs"
-        />
         <div class="comment-count">
             <span class="vnum" v-html="commentCount"></span> 条评论
         </div>
@@ -64,6 +58,12 @@
                     @change="handlePaginationChange"
             />
         </div>
+        <comment-editor
+                :targetId="id"
+                :target="target"
+                :options="options"
+                :configs="mergedConfigs"
+        />
     </div>
 </template>
 <script>
