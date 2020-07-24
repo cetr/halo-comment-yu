@@ -13,8 +13,9 @@
 2. 将 `评论模块 JS` 修改为：
 
     - 旧版：`https://cdn.jsdelivr.net/gh/coortop/halo-comment-alex@0.0.6/dist/halo-comment.min.js`
-    - 新版：`https://cdn.jsdelivr.net/gh/coortop/halo-comment-alex@1.0.4/dist/halo-comment.min.js`
-    或者 `https://cdn.jsdelivr.net/gh/coortop/halo-comment-alex@latest/dist/halo-comment.min.js`
+    - 新版：任选一种
+        - `https://cdn.jsdelivr.net/gh/coortop/halo-comment-alex@1.0.5/dist/halo-comment.min.js`
+        - `https://cdn.jsdelivr.net/gh/coortop/halo-comment-alex@latest/dist/halo-comment.min.js`
 
 ### 自定义配置
 

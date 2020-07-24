@@ -102,6 +102,11 @@ export function decodeHTML(html) {
     return output;
 }
 
+export function isQQ(qq) {
+    var re = /^[1-9][0-9]{4,9}$/gim;
+    return re.test(qq);
+}
+
 export function renderedEmojiHtml(html) {
     const emojiData = require('../components/EmojiPicker/data/emojis.js');
     for (let i = 0; i < emojiData["default"].length; i++) {

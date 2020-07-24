@@ -118,7 +118,8 @@
                                 tabindex="1"
                                 required="required"
                                 aria-required="true"
-                                placeholder="昵称"
+                                placeholder="昵称(填写QQ号自动获取昵称和邮箱)"
+                                @blur="pullInfo"
                         >
                     </div>
                     <div class="commentator commentator-email">
@@ -133,7 +134,8 @@
                                 tabindex="2"
                                 required="required"
                                 aria-required="true"
-                                placeholder="邮箱"
+                                placeholder="邮箱(用于获取头像和接收邮件)"
+                                @blur="pullInfo"
                         >
                     </div>
                     <div class="commentator commentator-authorUrl">
@@ -213,7 +215,7 @@
     import md5 from "md5";
     import VEmojiPicker from "./EmojiPicker/VEmojiPicker";
     import emojiData from "./EmojiPicker/data/emojis.js";
-    import {isEmpty, isObject, getUrlKey, renderedEmojiHtml, validEmail, queryStringify} from "../utils/util";
+    import {isEmpty, isObject, isQQ, getUrlKey, renderedEmojiHtml, validEmail, queryStringify} from "../utils/util";
     import commentApi from "../api/comment";
     import axios from "axios";
     import autosize from "autosize";
@@ -399,6 +401,36 @@
                 } else {
                     this.comment.content += emoji.emoji;
                 }
+            },
+            pullInfo() {
+                let author = this.comment.author;
+                if (author.length != 0 && isQQ(author)) {
+                    this.pullQQInfo(() => {
+                        this.warnings.push("拉取QQ信息失败！");
+                    });
+                    return;
+                }
+            },
+            pullQQInfo(errorQQCallback) {
+                let _self = this;
+                axios
+                    .get("https://api.lixingyong.com/api/qq", {
+                        params: {
+                            id: _self.comment.author
+                        }
+                    })
+                    .then(function (res) {
+                        let data = res.data;
+                        if (!!data.code && data.code == 500) {
+                            errorQQCallback();
+                        }
+                        _self.comment.author = data.nickname;
+                        _self.comment.email = data.email;
+                        // _self.avatar = data.avatar;
+                    })
+                    .catch(() => {
+                        errorQQCallback();
+                    });
             },
             handleGithubLogin() {
                 const githubOauthUrl = "http://github.com/login/oauth/authorize";
