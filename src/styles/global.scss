@@ -176,7 +176,7 @@
     resize: vertical;
     font-size: 14px;
     line-height: 20px;
-    padding: .7111em 1em;
+    padding: 6px 12x;
     background: #fff;
     border: none;
     box-sizing: border-box;
@@ -245,6 +245,7 @@
   .comment-textarea {
     position: relative;
     width: 100%;
+    height: 162px;
 
     label {
       font-weight: 400;
@@ -304,7 +305,7 @@
     border: 1px solid #e1e8ed;
     border-radius: 5px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 6px 12px;
     margin-bottom: 10px;
 
     overflow-wrap: break-word;
