@@ -4,12 +4,16 @@
                 class="page-item"
                 :class="{ disabled: !hasPrev }"
         >
-            <button
+            <a
                     class="prev-button"
                     tabindex="-1"
                     @click="handlePrevClick"
-            >上一页
-            </button>
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd"
+                          d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path>
+                </svg>
+            </a>
         </li>
         <!-- Show first page -->
         <li
@@ -17,22 +21,18 @@
                 v-if="firstPage != null"
                 :class="{ active: page === firstPage}"
         >
-            <button
+            <a
                     @click="handlePageItemClick(firstPage)"
                     :class="{ active: page === firstPage}"
             >{{ firstPage + 1}}
-            </button>
+            </a>
         </li>
         <!-- Show middle page -->
         <li
                 class="page-item"
                 v-show="hasMorePrev"
         >
-            <button
-                    type="button"
-            >
-                ...
-            </button>
+            <a> ... </a>
         </li>
         <li
                 class="page-item"
@@ -40,23 +40,19 @@
                 :key="middlePage"
                 :class="{ active: middlePage === page }"
         >
-            <button
+            <a
                     @click="handlePageItemClick(middlePage)"
                     :class="{ active: middlePage === page }"
             >
                 {{ middlePage + 1}}
-            </button>
+            </a>
         </li>
 
         <li
                 class="page-item"
                 v-show="hasMoreNext"
         >
-            <button
-                    type="button"
-            >
-                ...
-            </button>
+            <a> ... </a>
         </li>
         <!-- Show last page -->
         <li
@@ -64,23 +60,27 @@
                 v-if="lastPage"
                 :class="{ active: page === lastPage}"
         >
-            <button
+            <a
                     @click="handlePageItemClick(lastPage)"
                     :class="{ active: page === lastPage}"
             >
                 {{ lastPage + 1 }}
-            </button>
+            </a>
         </li>
 
         <li
                 class="page-item"
                 :class="{ disabled: !hasNext }"
         >
-            <button
+            <a
                     class="next-button"
                     @click="handleNextClick"
-            >下一页
-            </button>
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd"
+                          d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+                </svg>
+            </a>
         </li>
     </ul>
 </template>
