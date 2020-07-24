@@ -11,16 +11,11 @@
                 class="comment-body"
         >
             <div class="comment-avatar">
-                <a
-                        :href="comment.authorUrl"
-                        rel="nofollow"
-                        target="_blank"
-                ><img
+                <img
                         :alt="comment.author+`'s avatar`"
                         :src="avatar"
                         class="avatar"
                 >
-                </a>
             </div>
             <div class="contain-main">
                 <div class="comment-meta">
@@ -29,9 +24,14 @@
                             itemprop="author"
                     >
                         <a
+                                v-if="comment.authorUrl != null && comment.authorUrl != ''"
                                 :href="comment.authorUrl"
                                 rel="nofollow"
                                 target="_blank"
+                                class="author-name"
+                        >{{ comment.author }}</a>
+                        <a
+                                v-else
                                 class="author-name"
                         >{{ comment.author }}</a>
                         <span

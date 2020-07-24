@@ -20,6 +20,12 @@
     color: #cccccc
   }
 
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   a,
   abbr,
   acronym,
@@ -110,6 +116,11 @@
     margin-bottom: 15px;
   }
 
+  .comment-reply-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
   .middle {
     display: inline-block;
     vertical-align: middle
@@ -127,17 +138,19 @@
     box-shadow: 2px 2px 3px #e1e1e1;
   }
 
-  img.avatar-input {
+  span.input-avatar {
     display: block;
-    object-fit: cover;
-    border-radius: 100%;
-    width: 21px;
-    height: 21px;
-    cursor: pointer;
-    transition: all 0.8s;
     position: absolute;
-    vertical-align: middle;
-    margin: 6px 12px;
+    left: 20px;
+    bottom: 0px;
+
+    img.avatar-img {
+      width: 22px;
+      height: 22px;
+      border-radius: 100%;
+      cursor: pointer;
+      transition: all 0.8s;
+    }
   }
 
   .comment-editor {
@@ -147,7 +160,7 @@
 
     .inner {
       margin: auto;
-      padding: 20px 0;
+      padding: 0 0 40px;
     }
   }
 
@@ -186,13 +199,21 @@
   .author-info {
     position: relative;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin: 0 -10px 15px;
 
     .commentator {
       position: relative;
       float: left;
-      padding-right: 20px;
-      width: 30%;
+      padding: 0 10px;
+      width: 33.333333%;
+
+      //&.commentator-author{
+      //  padding-right: 20px;
+      //}
+      //
+      //&.commentator-authorUrl{
+      //  padding-left: 20px;
+      //}
 
       label {
         font-weight: 400;
@@ -212,7 +233,6 @@
         padding: 6px 12px;
         border: 1px solid #ccc;
         border-color: rgba(135, 150, 165, .15);
-        border-width: 1px;
         color: inherit;
         border-radius: 2px;
       }
@@ -305,6 +325,11 @@
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
+    margin-bottom: 5px;
+
+    &.SubmitBtn {
+      float: right;
+    }
 
     .button-submit,
     .button-preview-edit {

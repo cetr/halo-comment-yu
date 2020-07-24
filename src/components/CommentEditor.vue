@@ -4,6 +4,7 @@
             role="form"
     >
         <div class="inner">
+            <h4 class="comment-reply-title">发表评论</h4>
             <form class="comment-form">
                 <div
                         class="comment-textarea"
@@ -99,14 +100,16 @@
                 </div>
 
                 <div class="author-info">
-                    <div class="commentator">
-                        <label for="email">
+                    <div class="commentator commentator-author">
+                        <label for="author">
                             名称 <span>*</span>
                         </label>
-                        <img
-                                :src="avatar"
-                                class="avatar-input"
-                        >
+                        <span class="input-avatar">
+                            <img
+                                    :src="avatar"
+                                    class="avatar-img"
+                            >
+                        </span>
                         <input
                                 type="text"
                                 class="comment-input author "
@@ -118,7 +121,7 @@
                                 placeholder="昵称"
                         >
                     </div>
-                    <div class="commentator">
+                    <div class="commentator commentator-email">
                         <label for="email">
                             邮箱 <span>*</span>
                         </label>
@@ -133,8 +136,8 @@
                                 placeholder="邮箱"
                         >
                     </div>
-                    <div class="commentator">
-                        <label for="email">地址</label>
+                    <div class="commentator commentator-authorUrl">
+                        <label for="authorUrl">地址</label>
                         <input
                                 type="text"
                                 class="comment-input link"
@@ -145,7 +148,7 @@
                         >
                     </div>
                 </div>
-                <div class="comment-buttons">
+                <div class="comment-buttons SubmitBtn">
                     <button
                             class="button-submit"
                             href="javascript:void(0)"
