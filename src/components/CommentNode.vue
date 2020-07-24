@@ -47,16 +47,6 @@
                                 :datetime="comment.createTime"
                         >{{ this.timeAgo(comment.createTime) }}
                         </time>
-                        <span
-                                class="comment-reply"
-                                style="cursor: pointer;"
-                                :style="editing?'display:block;':''"
-                                @click="handleReplyClick"
-                        >{{ editing?'取消回复':'回复' }}</span>
-                        <!--                                        <a-->
-                        <!--                                                class="comment-id"-->
-                        <!--                                                :href="'#comment-'+comment.id"-->
-                        <!--                                        >#{{ comment.id }}</a>-->
                     </div>
                 </div>
                 <div
@@ -64,6 +54,12 @@
                         itemprop="description"
                         v-html="compileContent"
                 >
+                </div>
+                <div class="comment-info">
+                        <span
+                                class="comment-reply"
+                                @click="handleReplyClick"
+                        >{{ editing?'取消回复':'回复' }}</span>
                 </div>
             </div>
         </div>
@@ -145,10 +141,9 @@
         },
         computed: {
             avatar() {
+                let gravatar = this.options.comment_gravatar_default == 'mm' ? "" : this.options.comment_gravatar_default;
                 return (
-                    this.configs.gravatarSource +
-                    `/${this.comment.gravatarMd5}?s=256&d=` +
-                    this.options.comment_gravatar_default
+                    this.configs.gravatarSource + `/${this.comment.gravatarMd5}?s=256&d=` + gravatar
                 );
             },
             compileContent() {

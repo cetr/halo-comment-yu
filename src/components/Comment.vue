@@ -4,14 +4,8 @@
     id="halo-comment"
   >
 
-    <comment-editor
-      :targetId="id"
-      :target="target"
-      :options="options"
-      :configs="mergedConfigs"
-    />
     <div class="comment-count">
-      <span class="vnum" v-html="commentCount"></span>  评论
+      <span class="vnum" v-html="commentCount"></span>  条评论
     </div>
     <div
       class="comment-load-button"
@@ -64,6 +58,12 @@
         @change="handlePaginationChange"
       />
     </div>
+    <comment-editor
+            :targetId="id"
+            :target="target"
+            :options="options"
+            :configs="mergedConfigs"
+    />
   </div>
 </template>
 <script>
@@ -120,7 +120,7 @@ export default {
       repliedSuccess: null,
       replyingComment: null,
       options: {
-        comment_gravatar_default: "mm"
+        comment_gravatar_default: ""
       }
     };
   },
