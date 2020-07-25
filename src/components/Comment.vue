@@ -64,6 +64,9 @@
                 :options="options"
                 :configs="mergedConfigs"
         />
+        <div class="edition">
+            <a href="https://github.com/coortop/halo-comment-alex" target="_blank">alex</a> {{alexVersion}}
+        </div>
     </div>
 </template>
 <script>
@@ -73,6 +76,7 @@
     import optionApi from "../api/option";
     import Viewer from 'viewerjs';
     import 'viewerjs/dist/viewer.css';
+    import packagejson from '../../package.json';
 
     export default {
         name: "Comment",
@@ -101,7 +105,7 @@
                     loadingStyle: "default",
                     darkMode: false
                 })
-            },
+            }
         },
         data() {
             return {
@@ -119,6 +123,7 @@
                 loaded: false,
                 repliedSuccess: null,
                 replyingComment: null,
+                alexVersion: packagejson.version,
                 options: {
                     comment_gravatar_default: ""
                 }

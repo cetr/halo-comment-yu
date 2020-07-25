@@ -1,6 +1,6 @@
 {
-  "name": "halo-comment",
-  "version": "1.0.0",
+  "name": "halo-comment-alex",
+  "version": "v1.0.6",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,6 +16,7 @@
     "highlightjs": "^9.16.2",
     "marked": "^1.1.0",
     "md5": "^2.2.1",
+    "cross-env": "7.0.2",
     "promise.prototype.finally": "^3.1.2",
     "ua-parser-js": "^0.7.21",
     "viewerjs": "^1.6.1",
@@ -56,12 +57,12 @@
   "main": "babel.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halo-dev/halo-comment-normal.git"
+    "url": "git+https://github.com/coortop/halo-comment-alex.git"
   },
-  "author": "Ryan Wang",
+  "author": "弥枳",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/halo-dev/halo-comment-normal/issues"
+    "url": "https://github.com/coortop/halo-comment-alex/issues"
   },
-  "homepage": "https://github.com/halo-dev/halo-comment-normal#readme"
+  "homepage": "https://github.com/coortop/halo-comment-alex#readme"
 }

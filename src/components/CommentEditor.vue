@@ -112,13 +112,13 @@
                         </span>
                         <input
                                 type="text"
-                                class="comment-input author "
                                 id="author"
+                                class="comment-input author "
                                 v-model="comment.author"
                                 tabindex="1"
                                 required="required"
                                 aria-required="true"
-                                placeholder="昵称(填写QQ号自动获取昵称和邮箱)"
+                                placeholder="填写QQ号自动获取昵称和邮箱"
                                 @blur="pullInfo"
                         >
                     </div>
@@ -134,7 +134,7 @@
                                 tabindex="2"
                                 required="required"
                                 aria-required="true"
-                                placeholder="邮箱(用于获取头像和接收邮件)"
+                                placeholder="用于获取头像和接收回复通知"
                                 @blur="pullInfo"
                         >
                     </div>
@@ -142,11 +142,11 @@
                         <label for="authorUrl">地址</label>
                         <input
                                 type="text"
-                                class="comment-input link"
                                 id="authorUrl"
+                                class="comment-input link"
                                 v-model="comment.authorUrl"
                                 tabindex="3"
-                                placeholder="网站或博客(https://)"
+                                placeholder="网站或博客地址"
                         >
                     </div>
                 </div>
