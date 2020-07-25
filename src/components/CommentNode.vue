@@ -149,11 +149,7 @@
             compileContent() {
                 var at = "";
                 if (this.comment.parentId !== null && this.comment.parentId > 0) {
-                    at =
-                        '<a href="#comment-' +
-                        this.comment.parentId +
-                        '">@' + this.comment.parentAuthor +
-                        "</a>";
+                    at = '<a>@' + this.comment.parentAuthor + '</a>';
                 }
                 let str = at + marked(decodeHTML(this.comment.content));
                 return renderedEmojiHtml(str);
@@ -227,8 +223,7 @@
                     result = Nyear + "/" + Nmonth + "/" + Ndate + " " + Nhour + ":" + Nminute + ":" + Nsecond;
                 }
                 return result;
-            },
-
+            }
         }
     };
 </script>

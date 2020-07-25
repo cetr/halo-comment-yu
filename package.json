@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-alex",
-  "version": "v1.0.6",
+  "version": "v1.0.7",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
