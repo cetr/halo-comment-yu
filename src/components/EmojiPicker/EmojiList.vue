@@ -13,6 +13,7 @@
                     <div
                             v-show="category.length"
                             class="category-title"
+                            :class="category_name"
                             :ref="category_name"
                     >
                         {{ category_name }}
@@ -24,7 +25,7 @@
                         <Emoji
                                 v-for="(emoji, index_e) in category"
                                 :key="`${category_name}-${index_e}`"
-                                :data="emoji['emoji']"
+                                :data="emoji"
                                 @click.native="onSelect(emoji)"
                         />
                     </div>
@@ -37,7 +38,7 @@
                 <Emoji
                         v-for="(emoji, index) in dataFiltered"
                         :key="index"
-                        :data="emoji['emoji']"
+                        :data="emoji"
                         @click.native="onSelect(emoji)"
                 />
             </div>
@@ -117,4 +118,7 @@
 </script>
 
 <style>
+    .category-title.经典 {
+        margin-top: 8px !important;
+    }
 </style>
