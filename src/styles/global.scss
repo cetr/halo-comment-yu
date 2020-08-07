@@ -239,7 +239,6 @@
   .comment-textarea {
     position: relative;
     width: 100%;
-    height: 162px;
 
     label {
       font-weight: 400;
@@ -310,6 +309,12 @@
 
     img {
       max-width: 100%;
+    }
+  }
+
+  .comment-preview.isPreview {
+    img.vemoji {
+      max-width: 20px !important;
     }
   }
 
@@ -574,27 +579,7 @@
     position: relative;
     margin: 0 auto;
     padding: 0;
-
-    &:hover {
-      //.comment-reply {
-      //    display: block;
-      //}
-    }
   }
-
-  //.children {
-  //    .comment-body {
-  //        &:before {
-  //            content: "";
-  //            width: 2px;
-  //            height: 500%;
-  //            background: $color;
-  //            left: 23px;
-  //            top: -500%;
-  //            position: absolute;
-  //        }
-  //    }
-  //}
 
   .comment-avatar {
     position: relative;
@@ -617,7 +602,7 @@
 
     @media only screen and (max-width: 768px) {
       .useragent-info {
-        display: block;
+        //display: block;
       }
     }
 
@@ -631,12 +616,20 @@
       font-weight: 700;
       margin-right: 10px;
     }
-  }
 
-  .is-admin {
-    margin-left: 4px;
-    font-size: 14px;
-    cursor: pointer;
+    .is-admin {
+      cursor: pointer;
+      border: 1px solid #fb7299;
+      min-width: 30px;
+      display: inline-block;
+      text-align: center;
+      font-size: 12px;
+      color: #fb7299;
+      border-radius: 3px;
+      font-weight: 400;
+      margin: 0 10px 0 -5px;
+      padding: 2px;
+    }
   }
 
   .comment-time {
@@ -665,6 +658,10 @@
       img {
         max-width: 50%;
       }
+    }
+
+    img.vemoji {
+      max-width: 20px !important;
     }
   }
 
@@ -736,7 +733,6 @@
         color: black;
       }
     }
-
   }
 
   @keyframes top20 {

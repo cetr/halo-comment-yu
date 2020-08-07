@@ -19,11 +19,12 @@
                             aria-required="true"
                             tabindex="4"
                             :placeholder="options.comment_content_placeholder || '撰写评论...'"
+                            :style="{'height': textareaHeight}"
                             v-model="comment.content"
                     ></textarea>
                     <div
                             v-else
-                            class="markdown-body comment-preview"
+                            class="markdown-body comment-preview isPreview"
                             v-html="renderedContent"
                     ></div>
                 </div>
@@ -157,7 +158,6 @@
                             tabindex="5"
                             rel="nofollow noopener"
                             type="button"
-                            @click="handleSubmitClick"
                     >发表评论
                     </button>
                 </div>

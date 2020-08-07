@@ -1,5 +1,4 @@
 import Vue from 'vue'
-
 import CommentEditor from './CommentEditor'
 import CommentNode from './CommentNode'
 import CommentLoading from './CommentLoading'
@@ -15,7 +14,7 @@ const _components = {
 const components = {}
 
 Object.keys(_components).forEach(key => {
-  components[key] = Vue.component(key, _components[key])
+    components[key] = Vue.component(key, _components[key])
 })
 
 export default components

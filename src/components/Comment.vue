@@ -70,7 +70,6 @@
     </div>
 </template>
 <script>
-
     import "./index";
     import commentApi from "../api/comment";
     import optionApi from "../api/option";

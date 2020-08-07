@@ -23,7 +23,7 @@ export default {
         showUserAgent: true,
         gravatarSource: '//cdn.v2ex.com/gravatar',
         loadingStyle: 'default',
-        darkMode: true
+        darkMode: false
       }
     };
   }
