@@ -284,14 +284,19 @@
   }
 
 
-  .children img.avatar {
-    width: 2.225em;
-    height: 2.225em;
-  }
+  .children {
+    img.avatar {
+      width: 2.225em;
+      height: 2.225em;
+    }
 
+    .contain-main {
+      margin-left: 43px;
+    }
 
-  .children .contain-main {
-    margin-left: 43px;
+    .comment-time {
+      margin-top: 3px;
+    }
   }
 
   .comment-preview {
@@ -614,26 +619,28 @@
     .author-name {
       font-size: 16px;
       font-weight: 700;
-      margin-right: 10px;
+      margin-right: 6px;
     }
 
     .is-admin {
       cursor: pointer;
-      border: 1px solid #fb7299;
       min-width: 30px;
       display: inline-block;
       text-align: center;
       font-size: 12px;
-      color: #fb7299;
+      color: #fff;
       border-radius: 3px;
       font-weight: 400;
-      margin: 0 10px 0 -5px;
-      padding: 2px;
+      margin-right: 6px;
+      padding: 1px;
+      background: #fb7299;
+      height: 15px;
+      vertical-align: bottom;
     }
   }
 
   .comment-time {
-    display: inline-block;
+    display: block;
     margin-top: 11px;
     font-size: 10px;
     color: #b3b3b3;
@@ -971,6 +978,29 @@
       .commentator {
         width: 100%;
         margin-bottom: 15px;
+      }
+    }
+
+    .useragent-info {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .comment-meta > .comment-info {
+      margin-bottom: 10px;
+    }
+
+    .comment-time {
+      margin-top: 10px;
+    }
+
+    .children {
+      .useragent-info {
+        margin-top: 2px;
+      }
+
+      .comment-time {
+        margin-top: 10px;
       }
     }
   }
