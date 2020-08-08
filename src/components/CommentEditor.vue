@@ -158,6 +158,7 @@
                             tabindex="5"
                             rel="nofollow noopener"
                             type="button"
+                            @click="handleSubmitClick"
                     >发表评论
                     </button>
                 </div>

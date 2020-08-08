@@ -73,9 +73,9 @@
     import "./index";
     import commentApi from "../api/comment";
     import optionApi from "../api/option";
+    import packagejson from '../../package.json';
     import Viewer from 'viewerjs';
     import 'viewerjs/dist/viewer.css';
-    import packagejson from '../../package.json';
 
     export default {
         name: "Comment",
