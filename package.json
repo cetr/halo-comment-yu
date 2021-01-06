@@ -11,7 +11,7 @@
   "dependencies": {
     "vue": "^2.6.10",
     "autosize": "^4.0.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "highlight": "^0.2.4",
     "highlight.js": "^10.4.1",
     "highlightjs": "^9.16.2",
