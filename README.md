@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://github.com/halo-dev" target="_blank">halo-comment-alex</a></h1>
 
-> 适用于 Halo 的评论组件。
+> 适用于 Halo 的评论组件
 
 ### 示例
 
