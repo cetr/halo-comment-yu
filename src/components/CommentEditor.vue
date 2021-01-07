@@ -216,7 +216,15 @@
     import md5 from "md5";
     import VEmojiPicker from "./EmojiPicker/VEmojiPicker";
     import emojiData from "./EmojiPicker/data/emojis.js";
-    import {isEmpty, isObject, isQQ, getUrlKey, renderedEmojiHtml, validEmail, queryStringify} from "../utils/util";
+    import {
+        isEmpty,
+        isObject,
+        isQQ,
+        getUrlKey,
+        renderedEmojiHtml,
+        validEmail,
+        queryStringify
+    } from "../utils/util";
     import commentApi from "../api/comment";
     import axios from "axios";
     import autosize from "autosize";
@@ -274,6 +282,7 @@
         },
         computed: {
             renderedContent() {
+                //要预览的评论内容
                 let str = this.comment.content ? marked(this.comment.content) : "";
                 return renderedEmojiHtml(str);
             },
@@ -314,7 +323,6 @@
             this.comment.author = author ? author : "";
             this.comment.authorUrl = authorUrl ? authorUrl : "";
             this.comment.email = email ? email : "";
-            // this.handleGetGithubUser();
         },
         mounted() {
             // autosize(this.$refs.commentTextArea);
@@ -336,6 +344,7 @@
                     return;
                 }
 
+                //要保存的评论内容
                 const content = this.comment.content;
 
                 // Submit the comment
@@ -373,7 +382,6 @@
                 if (createdComment.status === "PUBLISHED") {
                     this.successes.push("评论成功，刷新即可显示最新评论！");
                 } else {
-                    // Show tips
                     this.infoes.push("您的评论已经投递至博主，等待博主审核！");
                 }
             },

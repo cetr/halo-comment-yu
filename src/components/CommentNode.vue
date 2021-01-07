@@ -152,6 +152,7 @@
                 if (this.comment.parentId !== null && this.comment.parentId > 0) {
                     at = '<a>@' + this.comment.parentAuthor + '</a>';
                 }
+                //要页面展示的评论内容
                 let str = at + marked(decodeHTML(this.comment.content));
                 return renderedEmojiHtml(str);
             },

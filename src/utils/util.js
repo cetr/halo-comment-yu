@@ -95,6 +95,9 @@ export function getUrlKey(name) {
 }
 
 export function decodeHTML(html) {
+    /**
+     * 特殊字符转义成HTML标签
+     */
     var output, elem = document.createElement('div');
     elem.innerHTML = html;
     output = elem.innerText || elem.textContent;
