@@ -65,7 +65,7 @@
                 :configs="mergedConfigs"
         />
         <div class="edition">
-            <a href="https://github.com/coortop/halo-comment-alex#readme" target="_blank">alex</a> {{alexVersion}}
+            <a href="https://github.com/cetr/halo-comment-yu#readme" target="_blank">Yu</a> {{alexVersion}}
         </div>
     </div>
 </template>
