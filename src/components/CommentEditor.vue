@@ -1,14 +1,9 @@
 <template>
-    <section
-            class="comment-editor"
-            role="form"
-    >
+    <section class="comment-editor" role="form">
         <div class="inner">
             <h4 class="comment-reply-title">发表评论</h4>
             <form class="comment-form">
-                <div
-                        class="comment-textarea"
-                >
+                <div class="comment-textarea">
                     <label for="comment">评论 <span>*</span></label>
                     <textarea
                             v-if="!previewMode"
@@ -29,10 +24,7 @@
                     ></div>
                 </div>
                 <ul class="comment-buttons">
-                    <li
-                            class="middle"
-                            style="margin-right:5px"
-                    >
+                    <li class="middle" style="margin-right:5px">
                         <div
                                 class="preview-btn" :class="{'actived':previewMode}"
                                 href="javascript:void(0)"
@@ -106,10 +98,7 @@
                             名称 <span>*</span>
                         </label>
                         <span class="input-avatar">
-                            <img
-                                    :src="avatar"
-                                    class="avatar-img"
-                            >
+                            <img :src="avatar" class="avatar-img">
                         </span>
                         <input
                                 type="text"
@@ -169,10 +158,7 @@
                                 v-for="(info, index) in infoes"
                                 :key="index"
                         >
-              <span
-                      class="closebtn"
-                      @click="clearAlertClose"
-              >&times;</span>
+                            <span class="closebtn" @click="clearAlertClose">&times;</span>
                             <strong>{{ info }}</strong>
                         </div>
                     </template>
@@ -184,10 +170,7 @@
                                 v-for="(success, index) in successes"
                                 :key="index"
                         >
-              <span
-                      class="closebtn"
-                      @click="clearAlertClose"
-              >&times;</span>
+                            <span class="closebtn" @click="clearAlertClose">&times;</span>
                             <strong>{{ success }}</strong>
                         </div>
                     </template>
@@ -199,10 +182,7 @@
                                 v-for="(warning, index) in warnings"
                                 :key="index"
                         >
-              <span
-                      class="closebtn"
-                      @click="clearAlertClose"
-              >&times;</span>
+                            <span class="closebtn" @click="clearAlertClose">&times;</span>
                             <strong>{{ warning }}</strong>
                         </div>
                     </template>

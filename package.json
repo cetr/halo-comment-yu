@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.1.7",
+  "version": "v1.1.8",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,18 +9,18 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.6.10",
     "autosize": "^4.0.2",
     "axios": "^0.21.1",
+    "cross-env": "7.0.2",
     "highlight": "^0.2.4",
     "highlight.js": "^10.4.1",
     "highlightjs": "^9.16.2",
     "marked": "^1.1.0",
     "md5": "^2.2.1",
-    "cross-env": "7.0.2",
     "promise.prototype.finally": "^3.1.2",
     "ua-parser-js": "^0.7.21",
-    "viewerjs": "^1.6.1"
+    "viewerjs": "^1.6.1",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
