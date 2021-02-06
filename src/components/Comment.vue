@@ -226,5 +226,5 @@
     $color: #666;
     $md-link-color: #1890ff;
     @import "../styles/global";
-    @import "../styles/github-markdown";
+    @import "../styles/markdown";
 </style>
