@@ -4,7 +4,7 @@
 
 ### 示例
 
-[留言板](https://blog.coor.top/message)
+[留言板](https://coor.top/message)
 
 ### 使用指南
 
