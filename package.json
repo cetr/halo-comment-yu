@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.2.1",
+  "version": "v1.2.2",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -53,16 +53,16 @@
     "> 1%",
     "last 2 versions"
   ],
-  "description": "<h1 align=\"center\"><a href=\"https://blog.coor.top/s/message\" target=\"_blank\">halo-comment-yu</a></h1> > 适用于 Halo 的评论组件",
+  "description": "适用于 Halo 的评论组件",
   "main": "babel.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coortop/halo-comment-yu.git"
+    "url": "git+https://github.com/cetr/halo-comment-yu.git"
   },
   "author": "知雨",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coortop/halo-comment-yu/issues"
+    "url": "https://github.com/cetr/halo-comment-yu/issues"
   },
-  "homepage": "https://github.com/coortop/halo-comment-yu#readme"
+  "homepage": "https://github.com/cetr/halo-comment-yu#readme"
 }

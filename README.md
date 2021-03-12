@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://blog.coor.top/s/message" target="_blank">halo-comment-yu</a></h1>
+<h1 align="center"><a href="https://coor.top/message" target="_blank">halo-comment-yu</a></h1>
 
 > 适用于 Halo 的评论组件
 
