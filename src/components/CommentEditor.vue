@@ -311,7 +311,6 @@
         methods: {
             handleSubmitClick() {
                 if (isEmpty(this.comment.author)) {
-                    // this.comment.author = '匿名';
                     this.warnings.push("评论者昵称不能为空");
                     return;
                 }
@@ -350,11 +349,9 @@
                     });
             },
             handlePreviewContent() {
-                if (this.comment.content.length > 0) {
                     this.previewMode = !this.previewMode;
                     this.showEmoji = false;
                     this.emojiDialogVisible = false;
-                }
             },
             handleCommentCreated(createdComment) {
                 this.clearAlertClose();
