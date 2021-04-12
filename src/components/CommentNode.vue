@@ -15,7 +15,7 @@
                         :alt="comment.author+`'s avatar`"
                         :src="avatar"
                         class="avatar"
-                >
+                />
             </div>
             <div class="contain-main">
                 <div class="comment-meta">
@@ -142,10 +142,12 @@
         },
         computed: {
             avatar() {
-                let gravatar = this.options.comment_gravatar_default == 'mm' ? "" : this.options.comment_gravatar_default;
-                return (
-                    this.configs.gravatarSource + `/${this.comment.gravatarMd5}?s=256&d=` + gravatar
-                );
+                let gravatarDefault = this.options.comment_gravatar_default;
+                ////////
+                gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
+                ////////
+                const gravatarSource = this.options.gravatar_source || "//cn.gravatar.com/avatar/";
+                return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
             },
             compileContent() {
                 var at = "";

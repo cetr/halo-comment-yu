@@ -1,15 +1,9 @@
 <template>
-    <div
-            :class="mergedConfigs.darkMode ? 'halo-comment dark-mode': 'halo-comment'"
-            id="halo-comment"
-    >
+    <div class="halo-comment" id="halo-comment">
         <div class="comment-count">
             <span class="vnum" v-html="commentCount"></span> 条评论
         </div>
-        <div
-                class="comment-load-button"
-                v-if="!mergedConfigs.autoLoad && !loaded"
-        >
+        <div class="comment-load-button" v-if="!mergedConfigs.autoLoad && !loaded">
             <a
                     class="button-load"
                     href="javascript:void(0)"
@@ -41,11 +35,7 @@
             </template>
         </ol>
 
-        <div
-                v-if="loaded && !commentLoading && comments.length<=0"
-                class="comment-empty"
-        >暂无评论
-        </div>
+        <div v-if="loaded && !commentLoading && comments.length<=0" class="comment-empty">暂无评论</div>
 
         <div
                 v-if="pagination.pages>1"
@@ -100,9 +90,7 @@
                     // auto load comment,default true
                     autoLoad: true,
                     showUserAgent: true,
-                    gravatarSource: "//cdn.v2ex.com/gravatar",
-                    loadingStyle: "default",
-                    darkMode: false
+                    loadingStyle: "default"
                 })
             }
         },
@@ -124,7 +112,7 @@
                 replyingComment: null,
                 alexVersion: packagejson.version,
                 options: {
-                    comment_gravatar_default: ""
+                    comment_gravatar_default: "mm"
                 }
             };
         },
@@ -142,9 +130,7 @@
                     {
                         autoLoad: true,
                         showUserAgent: true,
-                        gravatarSource: "//cdn.v2ex.com/gravatar",
-                        loadingStyle: "default",
-                        darkMode: false
+                        loadingStyle: "default"
                     },
                     propConfigs
                 );

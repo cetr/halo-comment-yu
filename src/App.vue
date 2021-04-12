@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Comment
-      :id="28"
-      type="sheet"
+      :id="1"
+      type="post"
       :configs="configs"
     />
   </div>
@@ -21,9 +21,7 @@ export default {
       configs: {
         autoLoad: true,
         showUserAgent: true,
-        gravatarSource: '//cdn.v2ex.com/gravatar',
-        loadingStyle: 'default',
-        darkMode: false
+        loadingStyle: 'default'
       }
     };
   }

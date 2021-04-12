@@ -200,10 +200,8 @@
         isEmpty,
         isObject,
         isQQ,
-        getUrlKey,
         renderedEmojiHtml,
-        validEmail,
-        queryStringify
+        validEmail
     } from "../utils/util";
     import commentApi from "../api/comment";
     import axios from "axios";
@@ -267,16 +265,17 @@
                 return renderedEmojiHtml(str);
             },
             avatar() {
-                let gravatar = this.options.comment_gravatar_default == 'mm' ? "" : this.options.comment_gravatar_default;
+                let gravatarDefault = this.options.comment_gravatar_default;
+                ////////
+                gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
+                ////////
+                const gravatarSource =
+                    this.options.gravatar_source || "//cn.gravatar.com/avatar/";
                 if (!this.comment.email || !validEmail(this.comment.email)) {
-                    return (
-                        this.configs.gravatarSource + "?d=" + gravatar
-                    );
+                    return `${gravatarSource}?d=${gravatarDefault}`;
                 }
                 const gravatarMd5 = md5(this.comment.email);
-                return (
-                    this.configs.gravatarSource + `/${gravatarMd5}?s=256&d=` + gravatar
-                );
+                return `${gravatarSource}${gravatarMd5}?s=256&d=${gravatarDefault}`;
             },
             commentValid() {
                 return (
@@ -349,9 +348,9 @@
                     });
             },
             handlePreviewContent() {
-                    this.previewMode = !this.previewMode;
-                    this.showEmoji = false;
-                    this.emojiDialogVisible = false;
+                this.previewMode = !this.previewMode;
+                this.showEmoji = false;
+                this.emojiDialogVisible = false;
             },
             handleCommentCreated(createdComment) {
                 this.clearAlertClose();
@@ -417,59 +416,6 @@
                     .catch(() => {
                         errorQQCallback();
                     });
-            },
-            handleGithubLogin() {
-                const githubOauthUrl = "http://github.com/login/oauth/authorize";
-                const query = {
-                    client_id: "a1aacd842bc158abd65b",
-                    redirect_uri: window.location.href,
-                    scope: "public_repo"
-                };
-                window.location.href = `${githubOauthUrl}?${queryStringify(query)}`;
-            },
-            handleGetGithubUser() {
-                const accessToken = this.handleGetGithubAccessToken();
-                axios
-                    .get(
-                        "https://cors-anywhere.herokuapp.com/https://api.github.com/user",
-                        {
-                            params: {
-                                access_token: accessToken
-                            }
-                        }
-                    )
-                    .then(function (response) {
-                        alert(response);
-                    })
-                    .catch(error => {
-                        alert(error);
-                    });
-            },
-            handleGetGithubAccessToken() {
-                const code = getUrlKey("code");
-                if (code) {
-                    axios
-                        .get(
-                            "https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token",
-                            {
-                                params: {
-                                    client_id: "a1aacd842bc158abd65b",
-                                    client_secret: "0daedb3923a4cdeb72620df511bdb11685dfe282",
-                                    code: code
-                                }
-                            }
-                        )
-                        .then(function (response) {
-                            let args = response.split("&");
-                            let arg = args[0].split("=");
-                            let access_token = arg[1];
-                            alert(access_token);
-                            return access_token;
-                        })
-                        .catch(error => {
-                            alert(error);
-                        });
-                }
             },
             clearAlertClose() {
                 this.infoes = [];
