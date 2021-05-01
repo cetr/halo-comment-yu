@@ -4,11 +4,6 @@
       v-if="showCategory"
       @select="onChangeCategory($event)"
     />
-    <InputSearch
-      v-if="showSearch"
-      v-model="filterEmoji"
-      :placeholder="labelSearch"
-    />
     <EmojiList
       :data="emojis"
       :category="category"
@@ -23,7 +18,6 @@
 <script>
 import Categories from './Categories'
 import EmojiList from './EmojiList'
-import InputSearch from './InputSearch'
 
 export default {
   name: 'VEmojiPicker',
@@ -37,8 +31,7 @@ export default {
   },
   components: {
     Categories,
-    EmojiList,
-    InputSearch
+    EmojiList
   },
   data: () => ({
     mapEmojis: {},

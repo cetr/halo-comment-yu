@@ -272,7 +272,6 @@
 
     .comment-preview.markdown-body {
       background-image: none;
-      margin-bottom: 7px;
     }
 
     textarea:focus {
@@ -347,6 +346,10 @@
 
     &.SubmitBtn {
       margin-bottom: 15px;
+    }
+
+    .comment-text {
+      user-select: none;
     }
 
     .button-submit,

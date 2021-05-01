@@ -4,8 +4,9 @@
             <h4 class="comment-reply-title">发表评论</h4>
             <form class="comment-form">
                 <div class="comment-textarea">
-                    <label for="comment">评论 <span>*</span></label>
+                    <label>评论 <span>*</span></label>
                     <textarea
+                            style="display: block;margin: 0;"
                             v-if="!previewMode"
                             id="comment"
                             class="comment-preview"
@@ -88,10 +89,8 @@
                             :pack="emojiPack"
                             @select="handleSelectEmoji"
                             v-show="emojiDialogVisible"
-                            labelSearch="搜索表情"
                     />
                 </div>
-
                 <div class="author-info">
                     <div class="commentator commentator-author">
                         <label for="author">
