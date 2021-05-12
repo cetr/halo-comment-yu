@@ -198,8 +198,8 @@
     import {
         isEmpty,
         isObject,
-        isQQ,
         renderedEmojiHtml,
+        decodeScriptLabel,
         validEmail
     } from "../utils/util";
     import commentApi from "../api/comment";
@@ -261,6 +261,7 @@
             renderedContent() {
                 //要预览的评论内容
                 let str = this.comment.content ? marked(this.comment.content) : "";
+                str = str == "" ? "" : decodeScriptLabel(str);
                 return renderedEmojiHtml(str);
             },
             avatar() {
@@ -322,7 +323,7 @@
                 }
 
                 //要保存的评论内容
-                const content = this.comment.content;
+                const content = decodeScriptLabel(this.comment.content);
 
                 // Submit the comment
                 this.comment.postId = this.targetId;
@@ -388,7 +389,7 @@
             },
             pullInfo() {
                 let author = this.comment.author;
-                if (author.length != 0 && isQQ(author)) {
+                if (author.length != 0 && /^[1-9][0-9]{4,9}$/gim.test(author)) {
                     this.pullQQInfo(() => {
                         this.warnings.push("拉取QQ信息失败！");
                     });
