@@ -399,9 +399,9 @@
             pullQQInfo(errorQQCallback) {
                 let _self = this;
                 axios
-                    .get("https://api.lixingyong.com/api/qq", {
+                    .get("https://api.coor.top/qqinfo", {
                         params: {
-                            id: _self.comment.author
+                            qq: _self.comment.author
                         }
                     })
                     .then(function (res) {
