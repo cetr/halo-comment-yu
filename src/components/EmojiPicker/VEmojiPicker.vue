@@ -1,16 +1,16 @@
 <template>
   <div id="EmojiPicker">
     <Categories
-      v-if="showCategory"
-      @select="onChangeCategory($event)"
+        v-if="showCategory"
+        @select="onChangeCategory($event)"
     />
     <EmojiList
-      :data="emojis"
-      :category="category"
-      :filter="filterEmoji"
-      :emojisByRow="emojisByRow"
-      :continuousList="continuousList"
-      @select="onSelectEmoji($event)"
+        :data="emojis"
+        :category="category"
+        :filter="filterEmoji"
+        :emojisByRow="emojisByRow"
+        :continuousList="continuousList"
+        @select="onSelectEmoji($event)"
     />
   </div>
 </template>
@@ -22,12 +22,12 @@ import EmojiList from './EmojiList'
 export default {
   name: 'VEmojiPicker',
   props: {
-    pack: { type: Array, required: false },
-    labelSearch: { type: String },
-    showCategory: { type: Boolean, default: false },
-    emojisByRow: { type: Number, default: 10 },
-    showSearch: { type: Boolean, default: () => false },
-    continuousList: { type: Boolean, default: () => true }
+    pack: {type: Array, required: false},
+    labelSearch: {type: String},
+    showCategory: {type: Boolean, default: false},
+    emojisByRow: {type: Number, default: 10},
+    showSearch: {type: Boolean, default: () => false},
+    continuousList: {type: Boolean, default: () => true}
   },
   components: {
     Categories,

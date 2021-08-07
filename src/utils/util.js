@@ -105,7 +105,7 @@ export function decodeHTML(html) {
 }
 
 export function renderedEmojiHtml(html) {
-    const emojiData = require('../components/EmojiPicker/data/emojis.js');
+    const emojiData = require('../components/EmojiPicker/data/_emojis.js');
     for (let i = 0; i < emojiData["default"].length; i++) {
         let aliases = emojiData["default"][i]["aliases"].toString().trim();
         if (aliases != null && aliases != "") {
