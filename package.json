@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.2.9",
+  "version": "v1.3.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",

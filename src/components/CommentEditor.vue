@@ -270,7 +270,7 @@ export default {
       gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
       ////////
       const gravatarSource =
-          this.options.gravatar_source || "//cn.gravatar.com/avatar/";
+          this.options.gravatar_source || "//sdn.geekzu.org/avatar/";
       if (!this.comment.email || !validEmail(this.comment.email)) {
         return `${gravatarSource}?d=${gravatarDefault}`;
       }
@@ -423,5 +423,5 @@ export default {
       this.successes = [];
     }
   }
-};
+}
 </script>
