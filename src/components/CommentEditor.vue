@@ -269,8 +269,7 @@ export default {
       ////////
       gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
       ////////
-      const gravatarSource =
-          this.options.gravatar_source || "//sdn.geekzu.org/avatar/";
+      const gravatarSource = this.options.gravatar_source || "//gravatar.loli.net/avatar/";
       if (!this.comment.email || !validEmail(this.comment.email)) {
         return `${gravatarSource}?d=${gravatarDefault}`;
       }
