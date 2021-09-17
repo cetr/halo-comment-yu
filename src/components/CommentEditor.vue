@@ -269,9 +269,9 @@ export default {
       ////////
       gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
       ////////
-      const gravatarSource = this.options.gravatar_source || "//gravatar.loli.net/avatar/";
+      const gravatarSource = this.options.gravatar_source;
       if (!this.comment.email || !validEmail(this.comment.email)) {
-        return `${gravatarSource}?d=${gravatarDefault}`;
+        return `${gravatarSource}?s=256&d=${gravatarDefault}`;
       }
       const gravatarMd5 = md5(this.comment.email);
       return `${gravatarSource}${gravatarMd5}?s=256&d=${gravatarDefault}`;

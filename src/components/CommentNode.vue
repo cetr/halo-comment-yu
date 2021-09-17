@@ -146,7 +146,7 @@ export default {
       ////////
       gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
       ////////
-      const gravatarSource = this.options.gravatar_source || "//gravatar.loli.net/avatar/";
+      const gravatarSource = this.options.gravatar_source;
       return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
     },
     compileContent() {
