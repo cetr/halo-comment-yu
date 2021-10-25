@@ -143,10 +143,7 @@ export default {
   computed: {
     avatar() {
       let gravatarDefault = this.options.comment_gravatar_default;
-      ////////未来版本剔除
-      gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
-      ////////
-      const gravatarSource = this.options.gravatar_source || '//gravatar.loli.net/avatar/';
+      const gravatarSource = this.options.gravatar_source || '//cn.gravatar.com/avatar/';
       return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
     },
     compileContent() {

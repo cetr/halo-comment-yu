@@ -266,10 +266,7 @@ export default {
     },
     avatar() {
       let gravatarDefault = this.options.comment_gravatar_default;
-      ////////未来版本剔除
-      gravatarDefault = gravatarDefault == 'mm' ? '' : gravatarDefault;
-      ////////
-      const gravatarSource = this.options.gravatar_source || '//gravatar.loli.net/avatar/';
+      const gravatarSource = this.options.gravatar_source || '//cn.gravatar.com/avatar/';
       if (!this.comment.email || !validEmail(this.comment.email)) {
         return `${gravatarSource}?s=256&d=${gravatarDefault}`;
       }
