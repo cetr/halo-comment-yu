@@ -115,11 +115,14 @@ export function renderedEmojiHtml(html) {
     return html;
 }
 
-export function decodeScriptLabel(html) {
+export function decodeHtmlLabel(html) {
     /**
-     * 转换评论中的<script></script>标签
+     * 转换评论中的HTML标签
      */
-    html = html.replace(new RegExp("</[\\s]*.*[\\s]*[sS][cC][rR][iI][pP][tT][\\s]*.*[\\s]*>", 'g'), "&lt;/script&gt;");
-    html = html.replace(new RegExp("<[\\s]*.*[\\s]*[sS][cC][rR][iI][pP][tT][\\s]*.*[\\s]*>", 'g'), "&lt;script&gt;");
+    // html = html.replace(new RegExp("</[\\s]*.*[\\s]*[sS][cC][rR][iI][pP][tT][\\s]*.*[\\s]*>", 'g'), "&lt;/script&gt;");
+    // html = html.replace(new RegExp("<[\\s]*.*[\\s]*[sS][cC][rR][iI][pP][tT][\\s]*.*[\\s]*>", 'g'), "&lt;script&gt;");
+    html = html.replace(new RegExp("<", 'g'), "&lt;");
+    html = html.replace(new RegExp(">", 'g'), "&gt;");
     return html;
 }
+
