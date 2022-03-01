@@ -1,7 +1,8 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.4.2",
+  "version": "v1.4.3",
   "private": false,
+  "files": ["dist"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
