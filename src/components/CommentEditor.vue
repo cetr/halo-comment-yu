@@ -200,7 +200,8 @@ import {
   isObject,
   renderedEmojiHtml,
   decodeHtmlLabel,
-  validEmail
+  validEmail,
+  returnBr
 } from "../utils/util";
 import commentApi from "../api/comment";
 import axios from "axios";
@@ -260,7 +261,7 @@ export default {
   computed: {
     renderedContent() {
       //要预览的评论内容
-      let str = this.comment.content ? marked(decodeHtmlLabel(this.comment.content)) : "";
+      let str = this.comment.content ? marked(returnBr(decodeHtmlLabel(this.comment.content))) : "";
       return renderedEmojiHtml(str);
     },
     avatar() {
@@ -318,7 +319,7 @@ export default {
       }
 
       //要保存的评论内容
-      const content = decodeHtmlLabel(this.comment.content);
+      const content = returnBr(decodeHtmlLabel(this.comment.content));
 
       // Submit the comment
       this.comment.postId = this.targetId;

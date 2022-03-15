@@ -55,7 +55,7 @@
         :configs="mergedConfigs"
     />
     <div class="edition">
-      <a href="https://github.com/cetr/halo-comment-yu#readme" target="_blank">Yu</a> {{ alexVersion }}
+      <a href="https://github.com/cetr/halo-comment-yu#readme" target="_blank">Yu</a> {{ yuVersion }}
     </div>
   </div>
 </template>
@@ -110,7 +110,7 @@ export default {
       loaded: false,
       repliedSuccess: null,
       replyingComment: null,
-      alexVersion: packagejson.version,
+      yuVersion: packagejson.version,
       options: {
         comment_gravatar_default: "mm"
       }

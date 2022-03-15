@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.4.5",
+  "version": "v1.4.6",
   "private": false,
   "files": ["dist","cdn"],
   "scripts": {

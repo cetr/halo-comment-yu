@@ -126,3 +126,6 @@ export function decodeHtmlLabel(html) {
     return html;
 }
 
+export function returnBr(str) {
+    return str.replace(/\r?\n/g, "\r\n\r\n");
+}
