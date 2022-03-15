@@ -266,12 +266,15 @@ export default {
     },
     avatar() {
       let gravatarDefault = this.options.comment_gravatar_default;
-      const gravatarSource = this.options.gravatar_source || '//cn.gravatar.com/avatar/';
-      if (!this.comment.email || !validEmail(this.comment.email)) {
+      const gravatarSource = this.options.gravatar_source || '';
+      if (gravatarSource != '' && (!this.comment.email || !validEmail(this.comment.email))) {
         return `${gravatarSource}?s=256&d=${gravatarDefault}`;
       }
       const gravatarMd5 = md5(this.comment.email);
-      return `${gravatarSource}${gravatarMd5}?s=256&d=${gravatarDefault}`;
+      if (gravatarSource != '') {
+        return `${gravatarSource}${gravatarMd5}?s=256&d=${gravatarDefault}`;
+      }
+      return '#';
     },
     commentValid() {
       return (
