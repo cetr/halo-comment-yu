@@ -14610,7 +14610,7 @@ optionApi.list = () => {
 
 /* harmony default export */ var api_option = (optionApi);
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = {"i8":"v1.4.7"};
+var package_namespaceObject = {"i8":"v1.4.8"};
 // EXTERNAL MODULE: ./node_modules/.pnpm/registry.npmmirror.com+viewerjs@1.10.4/node_modules/viewerjs/dist/viewer.js
 var viewer = __webpack_require__(1403);
 var viewer_default = /*#__PURE__*/__webpack_require__.n(viewer);
