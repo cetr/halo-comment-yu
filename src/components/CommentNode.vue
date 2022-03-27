@@ -142,12 +142,18 @@ export default {
   },
   computed: {
     avatar() {
-      let gravatarDefault = this.options.comment_gravatar_default;
-      const gravatarSource = this.options.gravatar_source || '';
-      if (gravatarSource != '') {
-        return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
+      // let gravatarDefault = this.options.comment_gravatar_default;
+      // const gravatarSource = this.options.gravatar_source || '';
+      // if (gravatarSource != '') {
+      //   return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
+      // }
+      // return '#';
+      const gravatarDefault = this.options.comment_gravatar_default;
+      const gravatarSource = this.options.gravatar_source || '//gravatar.loli.net/avatar/';
+      if (this.comment.avatar) {
+        return this.comment.avatar;
       }
-      return '#';
+      return `${gravatarSource}${this.comment.gravatarMd5}?s=256&d=${gravatarDefault}`;
     },
     compileContent() {
       var at = "";
