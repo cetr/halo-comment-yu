@@ -10,6 +10,6 @@
 
 1. 进入Halo博客后台 -> 系统 -> 博客设置 -> 评论设置
 
-2. 将 `评论模块 JS` 修改为：`https://npm.elemecdn.com/halo-comment-yu@1.5.0/dist/halo-comment.min.js`
+2. 将 `评论模块 JS` 修改为：`https://npm.elemecdn.com/halo-comment-yu@1.5.2/dist/halo-comment.min.js`
 
 3. 保存
