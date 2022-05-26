@@ -97,8 +97,8 @@
               名称 <span>*</span>
             </label>
             <span class="input-avatar">
-                            <img :src="avatar" class="avatar-img">
-                        </span>
+                <img :src="avatar" class="avatar-img"/>
+            </span>
             <input
                 type="text"
                 id="author"
@@ -107,24 +107,18 @@
                 tabindex="1"
                 required="required"
                 aria-required="true"
-                placeholder="填写QQ号自动获取昵称和邮箱"
-                @blur="pullInfo"
+                placeholder="姓名或昵称（必填）"
             >
           </div>
           <div class="commentator commentator-email">
-            <label for="email">
-              邮箱 <span>*</span>
-            </label>
+            <label for="email">邮箱</label>
             <input
                 type="text"
                 id="email"
                 class="comment-input email"
                 v-model="comment.email"
                 tabindex="2"
-                required="required"
-                aria-required="true"
-                placeholder="用于获取头像和接收回复通知"
-                @blur="pullInfo"
+                placeholder="接收回复和获取头像（选填，将保密）"
             >
           </div>
           <div class="commentator commentator-authorUrl">
@@ -135,7 +129,7 @@
                 class="comment-input link"
                 v-model="comment.authorUrl"
                 tabindex="3"
-                placeholder="网站或博客地址"
+                placeholder="网站或博客（选填）"
             >
           </div>
         </div>
@@ -201,10 +195,9 @@ import {
   renderedEmojiHtml,
   decodeHtmlLabel,
   validEmail,
-  returnBr
+  returnBr, isUrl
 } from "../utils/util";
 import commentApi from "../api/comment";
-import axios from "axios";
 import autosize from "autosize";
 
 export default {
@@ -273,13 +266,6 @@ export default {
       const gravatarMd5 = md5(this.comment.email);
       return `${gravatarSource}${gravatarMd5}?s=256&d=${gravatarDefault}`;
     },
-    commentValid() {
-      return (
-          !isEmpty(this.comment.author) &&
-          !isEmpty(this.comment.email) &&
-          !isEmpty(this.comment.content)
-      );
-    },
     infoAlertVisiable() {
       return this.infoes !== null && this.infoes.length > 0;
     },
@@ -306,15 +292,23 @@ export default {
   methods: {
     handleSubmitClick() {
       if (isEmpty(this.comment.author)) {
-        this.warnings.push("评论者昵称不能为空");
+        this.clearAlertClose();
+        this.warnings.push("评论者昵称不能为空！");
         return;
       }
-      if (isEmpty(this.comment.email)) {
-        this.warnings.push("邮箱不能为空");
+      if (!isEmpty(this.comment.email) && !validEmail(this.comment.email)) {
+        this.clearAlertClose();
+        this.warnings.push("邮箱格式不正确！");
+        return;
+      }
+      if (!isEmpty(this.comment.authorUrl) && !isUrl(this.comment.authorUrl)) {
+        this.clearAlertClose();
+        this.warnings.push("网址格式不正确！");
         return;
       }
       if (isEmpty(this.comment.content)) {
-        this.warnings.push("评论内容不能为空");
+        this.clearAlertClose();
+        this.warnings.push("评论内容不能为空！");
         return;
       }
 
@@ -382,36 +376,6 @@ export default {
       } else {
         this.comment.content += emoji.emoji;
       }
-    },
-    pullInfo() {
-      let author = this.comment.author;
-      if (author.length != 0 && /^[1-9][0-9]{4,9}$/gim.test(author)) {
-        this.pullQQInfo(() => {
-          this.warnings.push("拉取QQ信息失败！");
-        });
-        return;
-      }
-    },
-    pullQQInfo(errorQQCallback) {
-      let _self = this;
-      axios
-          .get("https://api.coor.top/qqinfo", {
-            params: {
-              qq: _self.comment.author
-            }
-          })
-          .then(function (res) {
-            let data = res.data;
-            if (!!data.code && data.code == 500) {
-              errorQQCallback();
-            }
-            _self.comment.author = data.nickname;
-            _self.comment.email = data.email;
-            // _self.avatar = data.avatar;
-          })
-          .catch(() => {
-            errorQQCallback();
-          });
     },
     clearAlertClose() {
       this.infoes = [];
