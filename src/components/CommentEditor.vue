@@ -151,8 +151,8 @@
                 v-for="(info, index) in infoes"
                 :key="index"
             >
-              <span class="closebtn" @click="clearAlertClose">&times;</span>
               <strong>{{ info }}</strong>
+              <span class="closebtn" @click="clearAlertClose">&times;</span>
             </div>
           </template>
 
@@ -163,8 +163,8 @@
                 v-for="(success, index) in successes"
                 :key="index"
             >
-              <span class="closebtn" @click="clearAlertClose">&times;</span>
               <strong>{{ success }}</strong>
+              <span class="closebtn" @click="clearAlertClose">&times;</span>
             </div>
           </template>
 
@@ -175,8 +175,8 @@
                 v-for="(warning, index) in warnings"
                 :key="index"
             >
-              <span class="closebtn" @click="clearAlertClose">&times;</span>
               <strong>{{ warning }}</strong>
+              <span class="closebtn" @click="clearAlertClose">&times;</span>
             </div>
           </template>
         </div>
@@ -371,7 +371,7 @@ export default {
       this.emojiDialogVisible = !this.emojiDialogVisible;
     },
     handleSelectEmoji(emoji) {
-      if (emoji.aliases != null && emoji.aliases != "") {
+      if (emoji.aliases != null && emoji.aliases !== "") {
         this.comment.content += emoji.aliases;
       } else {
         this.comment.content += emoji.emoji;

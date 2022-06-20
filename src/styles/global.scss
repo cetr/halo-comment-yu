@@ -723,6 +723,8 @@ $md-link-color: #1890ff;
   }
 
   .alert {
+    display: flex;
+    display: -webkit-flex;
     animation: top20 500ms;
     border-radius: 4px;
     padding: 8px 16px;
@@ -731,6 +733,10 @@ $md-link-color: #1890ff;
     opacity: 1;
     transition: opacity 0.6s;
     margin-top: 10px;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
 
     &.success {
       background-color: #4caf50;
@@ -745,12 +751,10 @@ $md-link-color: #1890ff;
     }
 
     .closebtn {
-      margin-left: 15px;
       color: #fff;
       font-weight: bold;
-      float: right;
       font-size: 22px;
-      line-height: 16px;
+      line-height: 22px;
       cursor: pointer;
       transition: 0.3s;
 

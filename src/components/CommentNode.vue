@@ -24,7 +24,7 @@
               itemprop="author"
           >
             <a
-                v-if="comment.authorUrl != null && comment.authorUrl != ''"
+                v-if="comment.authorUrl != null && comment.authorUrl !== ''"
                 :href="comment.authorUrl"
                 rel="nofollow"
                 target="_blank"

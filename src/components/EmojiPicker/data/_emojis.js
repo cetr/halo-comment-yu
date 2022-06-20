@@ -7,7 +7,7 @@ class Emoji {
     }
 }
 
-const emojiImgPath = "https://npm.elemecdn.com/halo-comment-yu@1.5.3/cdn/img/emoji";
+const emojiImgPath = "https://npm.elemecdn.com/halo-comment-yu@1.5.4/cdn/img/emoji";
 
 export default [
     new Emoji(`<img alt="smile" referrerpolicy="no-referrer" class="vemoji" src="${emojiImgPath}/2018new_weixioa02_org.png">`, "", " :smile: ", []),
