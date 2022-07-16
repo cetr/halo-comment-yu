@@ -640,19 +640,21 @@ $md-link-color: #1890ff;
     }
 
     .is-admin {
+      display: inline-flex;
       cursor: pointer;
-      min-width: 30px;
-      display: inline-block;
-      text-align: center;
-      font-size: 12px;
+      min-width: 36px;
+      font-size: 20px;
       color: #fff;
-      border-radius: 3px;
-      font-weight: 400;
-      margin-right: 6px;
-      padding: 1px;
+      border-radius: 4px;
+      margin: 0 -2px 0 -10px;
       background: #fb7299;
-      height: 15px;
-      vertical-align: bottom;
+      height: 24px;
+      justify-content: center;
+      -webkit-justify-content: center;
+      align-items: center;
+      -webkit-align-items: center;
+      vertical-align: middle;
+      transform: scale(0.5);
     }
   }
 

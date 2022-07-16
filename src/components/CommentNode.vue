@@ -34,7 +34,7 @@
                 v-else
                 class="author-name"
             >{{ comment.author }}</a>
-            <span v-if="comment.isAdmin" class="is-admin">博主</span>
+            <span v-if="comment.isAdmin" class="is-admin">UP</span>
             <span
                 v-if="configs.showUserAgent"
                 class="useragent-info"
