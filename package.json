@@ -1,6 +1,6 @@
 {
   "name": "halo-comment-yu",
-  "version": "v1.5.6",
+  "version": "v1.5.7",
   "main": "dist/halo-comment.min.js",
   "private": false,
   "files": [
